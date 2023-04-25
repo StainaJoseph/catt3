@@ -42,7 +42,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 
     <script>
-        $(document).ready(function () {
+	    
+	    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+  event: "purchase",
+  ecommerce: {
+    item_list_id: "related_products",
+    item_list_name: "Related products",
+    items: [
+     {
+      item_id: "ITM_12345",
+      item_name: "Python",
+      affiliation: "online_Course",
+      currency: "INR",
+    }]
+  }
+});
+        
+	    $(document).ready(function () {
             $('#review-slider-content').lightSlider({
                 auto: true,
                 loop: true,
